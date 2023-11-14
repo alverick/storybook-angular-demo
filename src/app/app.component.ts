@@ -22,7 +22,7 @@ export class AppComponent {
   completedPersonal = false;
   completedAdditional = false;
   completedConfirm = false;
-  isLinear = false;
+  isLinear = true;
   @ViewChild('stepper', { static: false }) stepper: MatStepper;
   doRegisterSubmit: Subject<boolean> = new Subject();
   doPersonalSubmit: Subject<boolean> = new Subject();
@@ -46,18 +46,10 @@ export class AppComponent {
     this.doAdditionalSubmit.next(true);
   }
 
-  saveForm(form: FormGroup, elm: string) {
-    this.registerService.userData = {
-      ...this.registerService.userData,
-      [elm]: form,
-    };
-    console.log(arguments, form, elm, this.registerService.userData);
-  }
-
   registerNext(form: FormGroup) {
     console.log(arguments, form);
     this.completedRegister = true;
-    this.registerService.userData.register = form;
+    this.registerService.userData.controls.register.setValue(form.value);
     setTimeout(() => {
       this.stepper.next();
     }, 100);
@@ -66,7 +58,7 @@ export class AppComponent {
   personalNext(form: FormGroup) {
     console.log(arguments, form);
     this.completedPersonal = true;
-    this.registerService.userData.personal = form;
+    this.registerService.userData.controls.personal.setValue(form.value);
     setTimeout(() => {
       this.stepper.next();
     }, 100);
@@ -75,7 +67,7 @@ export class AppComponent {
   additionalNext(form: FormGroup) {
     console.log(arguments, form);
     this.completedAdditional = true;
-    this.registerService.userData.additional = form;
+    this.registerService.userData.controls.additional.setValue(form.value);
     setTimeout(() => {
       this.stepper.next();
     }, 100);
@@ -83,10 +75,8 @@ export class AppComponent {
 
   saveRemote() {
     console.log('saveRemote');
-    this.registerService.userData.register.reset();
+    this.registerService.userData.reset();
     this.registerService.saveData().then(() => {
-      this.registerService.userData.personal.reset();
-      this.registerService.userData.additional.reset();
       this.stepper.next();
       this.completedRegister = false;
       this.completedPersonal = false;

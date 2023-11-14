@@ -43,9 +43,9 @@ export class PersonalComponent implements OnInit {
 
   send() {
     console.log('register', this.personalForm.valid);
-    // if (!this.registerForm.valid) {
-    //   return;
-    // }
+    if (!this.personalForm.valid) {
+      return;
+    }
     this.formSubmit.emit(this.personalForm);
   }
 }

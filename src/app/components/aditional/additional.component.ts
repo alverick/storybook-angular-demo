@@ -45,9 +45,9 @@ export class AdditionalComponent implements OnInit {
 
   send() {
     console.log('register', this.additionalForm.valid);
-    // if (!this.additionalForm.valid) {
-    //   return;
-    // }
+    if (!this.additionalForm.valid) {
+      return;
+    }
     this.formSubmit.emit(this.additionalForm);
   }
 }
