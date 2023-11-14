@@ -1,0 +1,23 @@
+<div>
+  <mat-card>
+    <mat-card-title>Personal info</mat-card-title>
+
+    <mat-card-content>
+      <form [formGroup]="additionalForm" (ngSubmit)="send()" #form="ngForm">
+        <mat-form-field>
+          <mat-select placeholder="Food" formControlName="food">
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{ food.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p><mat-checkbox formControlName="pepperoni">Pepperoni</mat-checkbox></p>
+        <p><mat-checkbox formControlName="extracheese">Extra Cheese</mat-checkbox></p>
+        <p><mat-checkbox formControlName="mushroom">Mushroom</mat-checkbox></p>
+        <div class="button">
+          <button type="submit" mat-button>Continue</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

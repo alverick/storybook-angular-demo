@@ -1,0 +1,22 @@
+mat-card {
+
+
+  mat-card-title,
+  mat-card-content {
+
+    form {
+
+      .address {
+        display: flex;
+        gap: 10px;
+        max-width: 568px;
+
+        .mat-mdc-form-field {
+          width: 100%;
+          min-width: 0;
+        }
+      }
+    }
+  }
+}
+
