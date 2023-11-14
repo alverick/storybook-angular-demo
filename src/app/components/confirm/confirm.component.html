@@ -4,22 +4,37 @@
 
     <mat-card-content>
       <div class="content">
-        <app-disclaimer mode="warning" icon="check_circle">Is this data correct?</app-disclaimer>
+        <app-disclaimer mode="warning" icon="check_circle"
+          >Is this data correct?</app-disclaimer
+        >
         <h2>User</h2>
-        <div *ngFor="let control of userData.register?.value|keyvalue;let field=index">
+        <div
+          *ngFor="
+            let control of userData.register?.value | keyvalue;
+            let field = index
+          ">
           <div class="label">{{ control.key }}:</div>
           <div class="value">{{ control.value }}</div>
         </div>
         <h2>Personal</h2>
-        <div *ngFor="let control of userData.personal?.value|keyvalue;let field=index">
+        <div
+          *ngFor="
+            let control of userData.personal?.value | keyvalue;
+            let field = index
+          ">
           <div class="label">{{ control.key }}:</div>
           <div class="value">{{ control.value }}</div>
         </div>
         <h2>Additional</h2>
-        <div *ngFor="let control of userData.additional?.value|keyvalue;let field=index">
+        <div
+          *ngFor="
+            let control of userData.additional?.value | keyvalue;
+            let field = index
+          ">
           <div class="label">{{ control.key }}:</div>
           <div class="value">{{ control.value }}</div>
         </div>
-      </div></mat-card-content>
+      </div></mat-card-content
+    >
   </mat-card>
 </div>
