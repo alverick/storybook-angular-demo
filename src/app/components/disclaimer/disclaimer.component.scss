@@ -1,0 +1,25 @@
+.disclaimer {
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 10px;
+
+  &.info {
+    background-color: #c2e6f3;
+
+    .icon {
+      color: deepskyblue;
+    }
+  }
+
+  &.warning {
+    background-color: #f1d9ae;
+
+    .icon {
+      color: orange;
+    }
+  }
+}
+

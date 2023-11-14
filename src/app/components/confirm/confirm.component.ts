@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {UserData} from "../../services/register.service";
 
 @Component({
   selector: 'app-confirm',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./confirm.component.scss']
 })
 export class ConfirmComponent {
-
+  @Input() userData: UserData
 }

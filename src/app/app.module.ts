@@ -22,6 +22,7 @@ import {PersonalComponent} from "./components/personal/personal.component";
 import {AdditionalComponent} from "./components/aditional/additional.component";
 import {ConfirmComponent} from "./components/confirm/confirm.component";
 import { DoneComponent } from './components/done/done.component';
+import { DisclaimerComponent } from './components/disclaimer/disclaimer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { DoneComponent } from './components/done/done.component';
     PersonalComponent,
     AdditionalComponent,
     ConfirmComponent,
-    DoneComponent
+    DoneComponent,
+    DisclaimerComponent
   ],
   imports: [
     BrowserModule,

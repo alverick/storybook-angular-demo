@@ -12,6 +12,7 @@ import {Subject} from "rxjs";
 export class RegisterComponent implements OnInit {
   @Input() submit: Subject<boolean> = new Subject();
   @Input() showButton: boolean = false;
+  @Output() loadedForm = new EventEmitter<FormGroup>()
   @Output() formSubmit = new EventEmitter<FormGroup>()
   @ViewChild('form', {static: false}) formElement: NgForm
   registerForm = new FormGroup({
@@ -33,13 +34,14 @@ export class RegisterComponent implements OnInit {
       console.log('value is changing', v);
       this.formElement.onSubmit(new Event('submit'))
     });
+    this.loadedForm.emit(this.registerForm)
   }
 
   register() {
     console.log('register', this.registerForm.valid);
-    // if (!this.registerForm.valid) {
-    //   return;
-    // }
+    if (!this.registerForm.valid) {
+      return;
+    }
     this.formSubmit.emit(this.registerForm)
   }
 }

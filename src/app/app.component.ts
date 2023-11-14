@@ -18,6 +18,10 @@ export class AppComponent {
   secondFormGroup = this._formBuilder.group({
     secondCtrl: ['', Validators.required],
   });
+  completedRegister = false
+  completedPersonal = false
+  completedAdditional = false
+  completedConfirm = false
   isLinear = false
   @ViewChild("stepper", {static: false}) stepper: MatStepper;
   doRegisterSubmit: Subject<boolean> = new Subject();
@@ -25,7 +29,7 @@ export class AppComponent {
   doAdditionalSubmit: Subject<boolean> = new Subject();
 
 
-  constructor(private _formBuilder: FormBuilder, private registerService: RegisterService, private router: Router) {
+  constructor(private _formBuilder: FormBuilder, protected registerService: RegisterService, private router: Router) {
   }
 
   validateRegisterForm() {
@@ -40,22 +44,54 @@ export class AppComponent {
     this.doAdditionalSubmit.next(true)
   }
 
+  saveForm(form: FormGroup, elm: string) {
+    this.registerService.userData = {
+      ...this.registerService.userData,
+      [elm]: form
+    }
+    console.log(arguments, form, elm, this.registerService.userData)
+  }
 
   registerNext(form: FormGroup) {
     console.log(arguments, form)
+    this.completedRegister = true
     this.registerService.userData.register = form
-    this.stepper.next();
+    setTimeout(() => {
+      this.stepper.next();
+    }, 100)
+
   }
 
   personalNext(form: FormGroup) {
     console.log(arguments, form)
+    this.completedPersonal = true
     this.registerService.userData.personal = form
-    this.stepper.next();
+    setTimeout(() => {
+      this.stepper.next();
+    }, 100)
   }
+
   additionalNext(form: FormGroup) {
     console.log(arguments, form)
+    this.completedAdditional = true
     this.registerService.userData.additional = form
-    this.stepper.next();
+    setTimeout(() => {
+      this.stepper.next();
+    }, 100)
+  }
+
+  saveRemote() {
+    console.log('saveRemote');
+    this.registerService.userData.register.reset()
+    this.registerService.saveData().then(() => {
+      this.registerService.userData.personal.reset()
+      this.registerService.userData.additional.reset()
+      this.stepper.next();
+      this.completedRegister = false
+      this.completedPersonal = false
+      this.completedAdditional = false
+      this.completedConfirm = false
+    })
   }
 
 }

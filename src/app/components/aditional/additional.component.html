@@ -14,7 +14,7 @@
         <p><mat-checkbox formControlName="pepperoni">Pepperoni</mat-checkbox></p>
         <p><mat-checkbox formControlName="extracheese">Extra Cheese</mat-checkbox></p>
         <p><mat-checkbox formControlName="mushroom">Mushroom</mat-checkbox></p>
-        <div class="button">
+        <div *ngIf="showButton"  class="button">
           <button type="submit" mat-button>Continue</button>
         </div>
       </form>
