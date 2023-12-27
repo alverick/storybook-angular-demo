@@ -1,16 +1,11 @@
 import { RegisterComponent } from './register.component';
 import {
   applicationConfig,
-  argsToTemplate,
   Meta,
   moduleMetadata,
   StoryObj,
 } from '@storybook/angular';
-import {
-  FormGroupDirective,
-  FormsModule,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -27,6 +22,7 @@ import { DisclaimerComponent } from '../disclaimer/disclaimer.component';
 const meta: Meta<RegisterComponent> = {
   title: 'UI/Register',
   component: RegisterComponent,
+  tags: ['autodocs'],
   decorators: [
     applicationConfig({
       providers: [provideAnimations()],
@@ -51,7 +47,6 @@ const meta: Meta<RegisterComponent> = {
   ],
   render: ({ ...args }) => ({
     props: args,
-    template: `<app-register ${argsToTemplate(args)}></app-register>`,
   }),
 };
 
