@@ -6,9 +6,10 @@ import {
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
-import { Observable } from 'rxjs';
-import { RegisterService } from '../services/register.service';
 import { pathOr } from 'ramda';
+import { Observable } from 'rxjs';
+
+import { RegisterService } from '../services/register.service';
 
 @Injectable({
   providedIn: 'root',

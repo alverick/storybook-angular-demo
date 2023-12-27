@@ -1,4 +1,5 @@
-import { DisclaimerComponent } from './disclaimer.component';
+import { MatIconModule } from '@angular/material/icon';
+import { provideAnimations } from '@angular/platform-browser/animations';
 import {
   applicationConfig,
   argsToTemplate,
@@ -6,8 +7,8 @@ import {
   moduleMetadata,
   StoryObj,
 } from '@storybook/angular';
-import { MatIconModule } from '@angular/material/icon';
-import { provideAnimations } from '@angular/platform-browser/animations';
+
+import { DisclaimerComponent } from './disclaimer.component';
 
 type DisclaimerArgs = DisclaimerComponent & { content: string };
 

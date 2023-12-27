@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DoneComponent } from './done.component';
 import { MATERIAL_ELM } from '../../app.module';
+import { DoneComponent } from './done.component';
 
 describe('DoneComponent', () => {
   let component: DoneComponent;

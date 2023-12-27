@@ -8,8 +8,9 @@ import {
 } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { RegisterService } from '../../services/register.service';
 import { Subject } from 'rxjs';
+
+import { RegisterService } from '../../services/register.service';
 
 @Component({
   selector: 'app-register',

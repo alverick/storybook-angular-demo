@@ -21,7 +21,7 @@ interface Food {
 })
 export class AdditionalComponent implements OnInit {
   @Input() submit: Subject<boolean> = new Subject();
-  @Input() showButton: boolean = false;
+  @Input() showButton = false;
   @Output() formSubmit = new EventEmitter<FormGroup>();
   @ViewChild('form', { static: false }) formElement: NgForm;
   additionalForm: FormGroup = new FormGroup({

@@ -1,12 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { DisclaimerComponent } from './disclaimer.component';
-import { MATERIAL_ELM } from '../../app.module';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from '../../app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MATERIAL_ELM } from '../../app.module';
+import { AppRoutingModule } from '../../app-routing.module';
+import { DisclaimerComponent } from './disclaimer.component';
 
 describe('DisclaimerComponent', () => {
   let component: DisclaimerComponent;

@@ -1,15 +1,16 @@
 import { TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
+
 import { AppComponent } from './app.component';
 import { MATERIAL_ELM } from './app.module';
-import { RegisterComponent } from './components/register/register.component';
-import { PersonalComponent } from './components/personal/personal.component';
-import { AdditionalComponent } from './components/aditional/additional.component';
+import { AdditionalComponent } from './components/additional/additional.component';
 import { ConfirmComponent } from './components/confirm/confirm.component';
-import { DoneComponent } from './components/done/done.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { DisclaimerComponent } from './components/disclaimer/disclaimer.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DoneComponent } from './components/done/done.component';
+import { PersonalComponent } from './components/personal/personal.component';
+import { RegisterComponent } from './components/register/register.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {

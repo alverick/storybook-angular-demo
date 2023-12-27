@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConfirmComponent } from './confirm.component';
 import { MATERIAL_ELM } from '../../app.module';
 import { DisclaimerComponent } from '../disclaimer/disclaimer.component';
+import { ConfirmComponent } from './confirm.component';
 
 describe('ConfirmComponent', () => {
   let component: ConfirmComponent;

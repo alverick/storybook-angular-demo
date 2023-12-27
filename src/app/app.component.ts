@@ -1,9 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { RegisterService } from './services/register.service';
-import { Router } from '@angular/router';
 import { MatStepper } from '@angular/material/stepper';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
+
+import { RegisterService } from './services/register.service';
 
 @Component({
   selector: 'app-root',

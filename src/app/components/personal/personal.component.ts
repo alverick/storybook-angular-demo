@@ -8,8 +8,9 @@ import {
 } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { RegisterService } from '../../services/register.service';
 import { Subject } from 'rxjs';
+
+import { RegisterService } from '../../services/register.service';
 
 @Component({
   selector: 'app-personal',
@@ -18,7 +19,7 @@ import { Subject } from 'rxjs';
 })
 export class PersonalComponent implements OnInit {
   @Input() submit: Subject<boolean> = new Subject();
-  @Input() showButton: boolean = false;
+  @Input() showButton = false;
   @Output() formSubmit = new EventEmitter<FormGroup>();
   @ViewChild('form', { static: false }) formElement: NgForm;
   personalForm = new FormGroup({
