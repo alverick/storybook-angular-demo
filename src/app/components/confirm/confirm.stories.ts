@@ -56,39 +56,28 @@ export default meta;
 
 type Story = StoryObj<ConfirmComponent>;
 
-const registerForm = new FormGroup({
-  email: new FormControl('mail@mail.com', {
-    nonNullable: true,
-    validators: [Validators.required, Validators.email],
-  }),
-  username: new FormControl('', {
-    nonNullable: true,
-    validators: [Validators.required],
-  }),
-  firstname: new FormControl('', {
-    nonNullable: true,
-    validators: [Validators.required],
-  }),
-  lastname: new FormControl('', {
-    nonNullable: true,
-    validators: [Validators.required],
-  }),
-  password: new FormControl('', {
-    nonNullable: true,
-    validators: [Validators.required],
-  }),
-  passwordConfirm: new FormControl('', {
-    nonNullable: true,
-    validators: [Validators.required],
-  }),
-});
-
-console.log(registerForm);
-
 const data = {
-  register: registerForm,
-  personal: new FormGroup({}),
-  additional: new FormGroup({}),
+  register: {
+    email: 'email@email.com',
+    username: 'username',
+    firstname: 'firstname',
+    lastname: 'lastname',
+    password: 'password',
+    passwordConfirm: 'passwordConfirm',
+  },
+  personal: {
+    birthDate: 'birthDate',
+    address: 'address',
+    city: 'city',
+    state: 'state',
+    zip: 'zip',
+  },
+  additional: {
+    food: 'food',
+    pepperoni: true,
+    mushroom: false,
+    extracheese: false,
+  },
 };
 export const Default: Story = {
   args: {
