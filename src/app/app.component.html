@@ -28,9 +28,9 @@
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Additional</ng-template>
-      <app-aditional
+      <app-additional
         [submit]="doAdditionalSubmit"
-        (formSubmit)="additionalNext($event)"></app-aditional>
+        (formSubmit)="additionalNext($event)"></app-additional>
       <div class="actions">
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="validateAdditionalForm()">Next</button>

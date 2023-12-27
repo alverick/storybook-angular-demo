@@ -15,7 +15,7 @@ interface Food {
 }
 
 @Component({
-  selector: 'app-aditional',
+  selector: 'app-additional',
   templateUrl: './additional.component.html',
   styleUrls: ['./additional.component.scss'],
 })
