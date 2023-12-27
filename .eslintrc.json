@@ -11,6 +11,7 @@
         "plugin:@angular-eslint/template/process-inline-templates",
         "plugin:prettier/recommended"
       ],
+      "plugins": ["simple-import-sort"],
       "rules": {
         "@angular-eslint/directive-selector": [
           "error",
@@ -27,7 +28,8 @@
             "prefix": "app",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "simple-import-sort/imports": "error"
       }
     },
     {
