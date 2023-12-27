@@ -37,7 +37,7 @@
       </div>
     </mat-step>
     <mat-step label="Confirm">
-      <app-confirm [userData]="registerService.userData"></app-confirm>
+      <app-confirm [userData]="registerService.userData.value"></app-confirm>
       <div class="actions">
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="saveRemote()">Confirm</button>
