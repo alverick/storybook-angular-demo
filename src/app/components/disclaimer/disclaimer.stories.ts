@@ -14,7 +14,9 @@ type DisclaimerArgs = DisclaimerComponent & { content: string };
 const meta: Meta<DisclaimerArgs> = {
   title: 'UI/Disclaimer',
   component: DisclaimerComponent,
+  tags: ['autodocs'],
   decorators: [
+    moduleMetadata({ imports: [MatIconModule] }),
     applicationConfig({
       providers: [provideAnimations()],
     }),
@@ -23,7 +25,7 @@ const meta: Meta<DisclaimerArgs> = {
     props: args,
     template: `<app-disclaimer ${argsToTemplate(
       args
-    )}>${content}</app-disclaimer>`,
+    )} >${content}</app-disclaimer>`,
   }),
 };
 
@@ -35,5 +37,12 @@ export const Default: Story = {
     mode: 'info',
     icon: 'home',
     content: 'texto de prueba',
+  },
+};
+export const Warning: Story = {
+  args: {
+    mode: 'warning',
+    icon: 'check_circle',
+    content: 'texto de warning',
   },
 };
