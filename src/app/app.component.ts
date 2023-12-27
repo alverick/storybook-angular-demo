@@ -11,7 +11,7 @@ import { Subject } from 'rxjs';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Storybook demo';
+  title = 'Jest demo';
   firstFormGroup = this._formBuilder.group({
     firstCtrl: ['', Validators.required],
   });

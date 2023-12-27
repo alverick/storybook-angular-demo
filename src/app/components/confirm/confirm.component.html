@@ -10,7 +10,7 @@
         <h2>User</h2>
         <div
           *ngFor="
-            let control of userData.register | keyvalue;
+            let control of userData?.register | keyvalue;
             let field = index
           "
           class="field">
@@ -20,7 +20,7 @@
         <h2>Personal</h2>
         <div
           *ngFor="
-            let control of userData.personal | keyvalue;
+            let control of userData?.personal | keyvalue;
             let field = index
           "
           class="field">
@@ -30,7 +30,7 @@
         <h2>Additional</h2>
         <div
           *ngFor="
-            let control of userData.additional | keyvalue;
+            let control of userData?.additional | keyvalue;
             let field = index
           "
           class="field">
