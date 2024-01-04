@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,7 +13,12 @@ describe('PersonalComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [PersonalComponent],
-      imports: [BrowserAnimationsModule, ReactiveFormsModule, ...MATERIAL_ELM],
+      imports: [
+        BrowserAnimationsModule,
+        HttpClientTestingModule,
+        ReactiveFormsModule,
+        ...MATERIAL_ELM,
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PersonalComponent);

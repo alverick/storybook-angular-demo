@@ -22,6 +22,7 @@ export class RegisterComponent implements OnInit {
   @Input() showButton = false;
   @Output() loadedForm = new EventEmitter<FormGroup>();
   @Output() formSubmit = new EventEmitter<FormGroup>();
+  @Output() formSubmitted = new EventEmitter<Record<string, string>>();
   @ViewChild('form', { static: false }) formElement: NgForm;
   registerForm = new FormGroup(
     {
@@ -67,10 +68,10 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    console.log('register', this.registerForm.valid);
     if (!this.registerForm.valid) {
       return;
     }
     this.formSubmit.emit(this.registerForm);
+    this.formSubmitted.emit(this.registerForm.value);
   }
 }
