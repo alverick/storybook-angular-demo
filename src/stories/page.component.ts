@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import type { User } from './User';
 
 @Component({

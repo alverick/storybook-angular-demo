@@ -6,10 +6,11 @@ const config: StorybookConfig = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
+    '@storybook/addon-mdx-gfm'
   ],
   framework: {
     name: '@storybook/angular',
-    options: {},
+    options: { builder: { useSWC: true } },
   },
   docs: {
     autodocs: 'tag',
