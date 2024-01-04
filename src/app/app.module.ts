@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,6 +24,8 @@ import { DisclaimerComponent } from './components/disclaimer/disclaimer.componen
 import { DoneComponent } from './components/done/done.component';
 import { PersonalComponent } from './components/personal/personal.component';
 import { RegisterComponent } from './components/register/register.component';
+import { MainComponent } from './pages/main/main.component';
+import { RouterTestComponent } from './pages/router-test/router-test.component';
 
 export const MATERIAL_ELM = [
   MatCardModule,
@@ -47,12 +50,15 @@ export const MATERIAL_ELM = [
     ConfirmComponent,
     DoneComponent,
     DisclaimerComponent,
+    RouterTestComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     CommonModule,
+    HttpClientModule,
     // Angular Forms Imports
     ReactiveFormsModule,
     FormsModule,

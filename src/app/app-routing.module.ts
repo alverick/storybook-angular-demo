@@ -1,9 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { RegisterValidGuard } from './guards/register-valid.guard';
+import { MainComponent } from './pages/main/main.component';
+import { RouterTestComponent } from './pages/router-test/router-test.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'test-router-param/:param',
+    component: RouterTestComponent,
+  },
+  {
+    path: '**',
+    component: MainComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
