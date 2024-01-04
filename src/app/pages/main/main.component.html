@@ -1,0 +1,41 @@
+<mat-stepper [linear]="isLinear" #stepper>
+  <mat-step [completed]="completedRegister" label="Register">
+    <app-register
+      [submit]="doRegisterSubmit"
+      (formSubmit)="registerNext($event)">
+    </app-register>
+    <div class="actions">
+      <div class="empty"></div>
+      <button mat-button (click)="validateRegisterForm()">Next</button>
+    </div>
+  </mat-step>
+  <mat-step [completed]="completedPersonal" label="Personal data">
+    <app-personal
+      [submit]="doPersonalSubmit"
+      (formSubmit)="personalNext($event)"></app-personal>
+    <div class="actions">
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="validatePersonalForm()">Next</button>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Additional</ng-template>
+    <app-additional
+      [submit]="doAdditionalSubmit"
+      (formSubmit)="additionalNext($event)"></app-additional>
+    <div class="actions">
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="validateAdditionalForm()">Next</button>
+    </div>
+  </mat-step>
+  <mat-step label="Confirm">
+    <app-confirm [userData]="registerService.userData.value"></app-confirm>
+    <div class="actions">
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="saveRemote()">Confirm</button>
+    </div>
+  </mat-step>
+  <mat-step label="Done">
+    <app-done></app-done>
+  </mat-step>
+</mat-stepper>
