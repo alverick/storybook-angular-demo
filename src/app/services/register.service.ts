@@ -1,11 +1,32 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 export interface UserData {
   additional: FormGroup;
   personal: FormGroup;
   register: FormGroup;
 }
+
+export type People = {
+  name: string;
+  height: string;
+  mass: string;
+  hair_color: string;
+  skin_color: string;
+  eye_color: string;
+  birth_year: string;
+  gender: string;
+  homeworld: string;
+  films: string[];
+  species: string[];
+  vehicles: string[];
+  starships: string[];
+  created: Date;
+  edited: Date;
+  url: string;
+};
 
 @Injectable({
   providedIn: 'root',
@@ -56,8 +77,8 @@ export class RegisterService {
     }),
   });
 
-  constructor() {
-    console.log('register service');
+  constructor(private http: HttpClient) {
+    // console.log('register service');
   }
 
   saveData() {
@@ -66,5 +87,9 @@ export class RegisterService {
         resolve(true);
       }, 3000);
     });
+  }
+
+  getPeopleData(id: number): Observable<People> {
+    return this.http.get<People>(`https://swapi.dev/api/people/${id}/`);
   }
 }

@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 
 import { RegisterService } from './register.service';
@@ -6,11 +7,27 @@ describe('RegisterService', () => {
   let service: RegisterService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports: [HttpClientModule],
+    });
     service = TestBed.inject(RegisterService);
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
+  });
+
+  it('save data', done => {
+    service.saveData().then(value => {
+      expect(value).toBeTruthy();
+      done();
+    });
+  });
+
+  it('get people data', done => {
+    service.getPeopleData(1).subscribe(value => {
+      expect(value.name).toEqual('Luke Skywalker');
+      done();
+    });
   });
 });
